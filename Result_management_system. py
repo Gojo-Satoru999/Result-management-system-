@@ -1,0 +1,33 @@
+results = []
+
+def add_result():
+    name = input("Enter student name: ")
+    score = input("Enter score: ")
+    results.append({"name": name, "score": score})
+    print("Result added")
+
+def view_results():
+    if not results:
+        print("No results available")
+    else:
+        for result in results:
+            print(result["name"], "-", result["score"])
+
+def main():
+    while True:
+        print("1. Add Result")
+        print("2. View Results")
+        print("3. Exit")
+
+        choice = input("Choose option: ")
+
+        if choice == "1":
+            add_result()
+        elif choice == "2":
+            view_results()
+        elif choice == "3":
+            break
+        else:
+            print("Invalid option")
+
+main()
